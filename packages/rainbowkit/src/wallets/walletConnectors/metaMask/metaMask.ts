@@ -65,6 +65,7 @@ export const metaMask = ({
           });
 
       const getUri = async () => {
+        // @ts-ignore
         const { uri } = (await connector.getProvider()).connector;
 
         return isAndroid()

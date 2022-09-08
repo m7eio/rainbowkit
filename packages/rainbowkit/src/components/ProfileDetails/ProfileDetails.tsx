@@ -10,6 +10,8 @@ import { formatENS } from '../ConnectButton/formatENS';
 import { CopiedIcon } from '../Icons/Copied';
 import { CopyIcon } from '../Icons/Copy';
 import { DisconnectIcon } from '../Icons/Disconnect';
+import { EditProfile } from '../Icons/EditProfile';
+import { ViewProfile } from '../Icons/ViewProfile';
 import { ShowRecentTransactionsContext } from '../RainbowKitProvider/ShowRecentTransactionsContext';
 import { Text } from '../Text/Text';
 import { TxList } from '../Txs/TxList';
@@ -22,6 +24,8 @@ interface ProfileDetailsProps {
   ensName: ReturnType<typeof useEnsName>['data'];
   onClose: () => void;
   onDisconnect: () => void;
+  onEditProfile: () => void;
+  onViewProfile: () => void;
 }
 
 export function ProfileDetails({
@@ -31,6 +35,8 @@ export function ProfileDetails({
   ensName,
   onClose,
   onDisconnect,
+  onEditProfile,
+  onViewProfile,
 }: ProfileDetailsProps) {
   const showRecentTransactions = useContext(ShowRecentTransactionsContext);
   const [copiedAddress, setCopiedAddress] = useState(false);
@@ -141,6 +147,24 @@ export function ProfileDetails({
               action={onDisconnect}
               icon={<DisconnectIcon />}
               label="Disconnect"
+            />
+          </Box>
+          <Box
+            display="flex"
+            flexDirection="row"
+            gap="8"
+            margin="2"
+            marginTop="16"
+          >
+            <ProfileDetailsAction
+              action={onViewProfile}
+              icon={<ViewProfile size={16} />}
+              label="View Profile"
+            />
+            <ProfileDetailsAction
+              action={onEditProfile}
+              icon={<EditProfile size={16} />}
+              label="Edit Profile"
             />
           </Box>
         </Box>
