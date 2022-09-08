@@ -63,6 +63,9 @@ export interface RainbowKitProviderProps {
   coolMode?: boolean;
   avatar?: AvatarComponent;
   modalSize?: ModalSizes;
+  externalContext?: {
+    [key: string]: any;
+  };
 }
 
 const defaultTheme = lightTheme();
@@ -78,6 +81,7 @@ export function RainbowKitProvider({
   coolMode = false,
   avatar,
   modalSize = ModalSizeOptions.WIDE,
+  externalContext = {},
 }: RainbowKitProviderProps) {
   usePreloadImages();
 
@@ -94,6 +98,7 @@ export function RainbowKitProvider({
   const appContext = {
     ...defaultAppInfo,
     ...appInfo,
+    ...externalContext,
   };
 
   const avatarContext = avatar ?? defaultAvatar;
