@@ -22,13 +22,13 @@ export function AccountModal({ onClose, open }: AccountModalProps) {
 
   const viewProfileHandler = React.useCallback(() => {
     if (onViewProfile) {
-      onViewProfile();
+      onViewProfile(onClose);
     }
   }, [onViewProfile]);
 
   const editProfileHandler = React.useCallback(() => {
     if (onEditProfile) {
-      onEditProfile();
+      onEditProfile(onClose);
     }
   }, [onEditProfile]);
 
