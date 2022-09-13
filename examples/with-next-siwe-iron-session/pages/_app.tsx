@@ -1,7 +1,7 @@
 // This example is based on the wagmi SIWE tutorial
 // https://wagmi.sh/examples/sign-in-with-ethereum
 import '../styles/global.css';
-import '@rainbow-me/rainbowkit/styles.css';
+import '@m7eio/rainbowkit/styles.css';
 import type { AppProps } from 'next/app';
 import {
   RainbowKitProvider,
@@ -11,7 +11,7 @@ import {
   createAuthenticationAdapter,
   RainbowKitAuthenticationProvider,
   AuthenticationStatus,
-} from '@rainbow-me/rainbowkit';
+} from '@m7eio/rainbowkit';
 import { chain, configureChains, createClient, WagmiConfig } from 'wagmi';
 import { alchemyProvider } from 'wagmi/providers/alchemy';
 import { publicProvider } from 'wagmi/providers/public';

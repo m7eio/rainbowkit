@@ -319,7 +319,7 @@ export default function Home() {
 
 function InstallScript() {
   const [requestCopy, setRequestCopy] = useState(false);
-  const code = 'npm init @rainbow-me/rainbowkit@latest';
+  const code = 'npm init @m7eio/rainbowkit@latest';
   const ref = useCoolMode('/rainbow.svg') as Ref<HTMLButtonElement>;
 
   React.useEffect(() => {

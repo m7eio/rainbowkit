@@ -1,4 +1,4 @@
-import { ConnectButton } from '@rainbow-me/rainbowkit';
+import { ConnectButton } from '@m7eio/rainbowkit';
 
 const App = () => {
   return (

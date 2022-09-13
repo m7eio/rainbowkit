@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { chain, configureChains, createClient } from 'wagmi';
 import { alchemyProvider } from 'wagmi/providers/alchemy';
 import { publicProvider } from 'wagmi/providers/public';
-import { getDefaultWallets } from '@rainbow-me/rainbowkit';
+import { getDefaultWallets } from '@m7eio/rainbowkit';
 import type { Chain } from 'wagmi';
 import type { QueryClient } from 'react-query';
 import type { Client, WebSocketProvider } from '@wagmi/core';

@@ -4,7 +4,7 @@ import {
   useAddRecentTransaction,
   useChainModal,
   useConnectModal,
-} from '@rainbow-me/rainbowkit';
+} from '@m7eio/rainbowkit';
 import { GetServerSideProps } from 'next';
 import { unstable_getServerSession } from 'next-auth';
 import { useSession } from 'next-auth/react';

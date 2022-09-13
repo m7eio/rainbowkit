@@ -9,7 +9,7 @@ import {
 } from '@remix-run/react';
 import { json } from '@remix-run/node';
 import { WagmiConfig } from 'wagmi';
-import { RainbowKitProvider, ConnectButton } from '@rainbow-me/rainbowkit';
+import { RainbowKitProvider, ConnectButton } from '@m7eio/rainbowkit';
 import { useSetupWagmi } from './hooks/useSetupWagmi';
 import type {
   MetaFunction,
@@ -19,7 +19,7 @@ import type {
 import type { Chain } from 'wagmi';
 
 import globalStylesUrl from './styles/global.css';
-import rainbowStylesUrl from '@rainbow-me/rainbowkit/styles.css';
+import rainbowStylesUrl from '@m7eio/rainbowkit/styles.css';
 
 type Env = { ALCHEMY_ID?: string; PUBLIC_ENABLE_TESTNETS?: string };
 

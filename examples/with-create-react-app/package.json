@@ -3,7 +3,7 @@
   "version": "0.1.20",
   "private": true,
   "dependencies": {
-    "@rainbow-me/rainbowkit": "workspace:*",
+    "@m7eio/rainbowkit": "workspace:*",
     "@testing-library/jest-dom": "^5.16.4",
     "@testing-library/react": "^13.2.0",
     "@testing-library/user-event": "^13.5.0",
@@ -23,7 +23,7 @@
     "dev": "npm run start",
     "start": "PORT=3030 react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test --transformIgnorePatterns \"node_modules/(?!@rainbow-me)/\"",
+    "test": "react-scripts test --transformIgnorePatterns \"node_modules/(?!@m7eio)/\"",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {

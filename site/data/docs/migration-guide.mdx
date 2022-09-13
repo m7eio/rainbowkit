@@ -17,7 +17,7 @@ Follow the steps below to migrate.
 Upgrade RainbowKit and wagmi to their latest version:
 
 ```bash
-npm i @rainbow-me/rainbowkit@^0.4.0 wagmi@^0.5.0
+npm i @m7eio/rainbowkit@^0.4.0 wagmi@^0.5.0
 ```
 
 #### 2. Check for breaking changes in `wagmi`
@@ -35,7 +35,7 @@ Removed the `chainId` parameter from `createConnector` on the `Wallet` type.
 If you previously derived RPC URLs from the `chainId` on `createConnector`, you can now remove that logic as `wagmi` now handles RPC URLs internally when used with `configureChains`.
 
 ```diff
-import { connectorsForWallets, wallet, Chain, Wallet } from '@rainbow-me/rainbowkit';
+import { connectorsForWallets, wallet, Chain, Wallet } from '@m7eio/rainbowkit';
 import { chain, configureChains } from 'wagmi';
 import { alchemyProvider } from 'wagmi/providers/alchemy';
 import { publicProvider } from 'wagmi/providers/public';
@@ -97,7 +97,7 @@ Follow the steps below to migrate.
 Upgrade RainbowKit and wagmi to their latest version:
 
 ```bash
-npm i @rainbow-me/rainbowkit@^0.2.0 wagmi@^0.4.2
+npm i @m7eio/rainbowkit@^0.2.0 wagmi@^0.4.2
 ```
 
 #### 2. Replace configureChains import
@@ -105,7 +105,7 @@ npm i @rainbow-me/rainbowkit@^0.2.0 wagmi@^0.4.2
 Import `configureChains` from wagmi instead of RainbowKit:
 
 ```diff
-- import { configureChains } from '@rainbow-me/rainbowkit';
+- import { configureChains } from '@m7eio/rainbowkit';
 + import { configureChains } from 'wagmi';
 ```
 
@@ -114,7 +114,7 @@ Import `configureChains` from wagmi instead of RainbowKit:
 RainbowKit no longer exports an `apiProvider` API. Replace it with your desired provider from wagmi.
 
 ```diff
-- import { apiProvider } from '@rainbow-me/rainbowkit';
+- import { apiProvider } from '@m7eio/rainbowkit';
 ```
 
 #### Alchemy

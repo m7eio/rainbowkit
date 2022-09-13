@@ -7,5 +7,5 @@ module.exports = {
   // assetsBuildDirectory: "public/build",
   // serverBuildPath: "build/index.js",
   // publicPath: "/build/",
-  serverDependenciesToBundle: ['@rainbow-me/rainbowkit'],
+  serverDependenciesToBundle: ['@m7eio/rainbowkit'],
 };

@@ -8,7 +8,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@rainbow-me/rainbowkit": "workspace:*",
+    "@m7eio/rainbowkit": "workspace:*",
     "buffer": "^6.0.3",
     "ethers": "^5.0.0",
     "react": "^18.1.0",

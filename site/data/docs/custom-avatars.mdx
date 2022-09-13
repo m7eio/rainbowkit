@@ -10,10 +10,7 @@ description: Customizing your app's user avatar
 By default we provide an avatar for users in case their ENS image is not set, but you can customize this by providing your own avatar component. You can import the `AvatarComponent` type if using TypeScript:
 
 ```tsx
-import {
-  RainbowKitProvider,
-  AvatarComponent,
-} from '@rainbow-me/rainbowkit';
+import { RainbowKitProvider, AvatarComponent } from '@m7eio/rainbowkit';
 import { generateColorFromAddress } from './utils';
 
 const CustomAvatar: AvatarComponent = ({ address, ensImage, size }) => {

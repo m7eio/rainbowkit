@@ -16,10 +16,10 @@ If you haven't already, first set up your [Next.js](https://nextjs.org) project 
 
 ### Install
 
-Install the `@rainbow-me/rainbowkit-siwe-next-auth` package.
+Install the `@m7eio/rainbowkit-siwe-next-auth` package.
 
 ```bash
-npm install @rainbow-me/rainbowkit-siwe-next-auth
+npm install @m7eio/rainbowkit-siwe-next-auth
 ```
 
 ### Set up the provider
@@ -27,14 +27,14 @@ npm install @rainbow-me/rainbowkit-siwe-next-auth
 In your `App` component, import `RainbowKitSiweNextAuthProvider`.
 
 ```tsx
-import { RainbowKitSiweNextAuthProvider } from '@rainbow-me/rainbowkit-siwe-next-auth';
+import { RainbowKitSiweNextAuthProvider } from '@m7eio/rainbowkit-siwe-next-auth';
 ```
 
 Wrap `RainbowKitProvider` with `RainbowKitSiweNextAuthProvider`, ensuring it's nested within NextAuth's `SessionProvider` so that it has access to the session.
 
 ```tsx
-import { RainbowKitSiweNextAuthProvider } from '@rainbow-me/rainbowkit-siwe-next-auth';
-import { RainbowKitProvider } from '@rainbow-me/rainbowkit';
+import { RainbowKitSiweNextAuthProvider } from '@m7eio/rainbowkit-siwe-next-auth';
+import { RainbowKitProvider } from '@m7eio/rainbowkit';
 import { SessionProvider } from 'next-auth/react';
 import { AppProps } from 'next/app';
 import { WagmiConfig } from 'wagmi';
@@ -66,7 +66,7 @@ This function will be called whenever a new message is created. Options returned
 import {
   RainbowKitSiweNextAuthProvider,
   GetSiweMessageOptions,
-} from '@rainbow-me/rainbowkit-siwe-next-auth';
+} from '@m7eio/rainbowkit-siwe-next-auth';
 
 const getSiweMessageOptions: GetSiweMessageOptions = () => ({
   statement: 'Sign in to my RainbowKit app',

@@ -1,12 +1,12 @@
 import '../styles/global.css';
-import '@rainbow-me/rainbowkit/styles.css';
+import '@m7eio/rainbowkit/styles.css';
 import type { AppProps } from 'next/app';
 import {
   RainbowKitProvider,
   getDefaultWallets,
   connectorsForWallets,
   wallet,
-} from '@rainbow-me/rainbowkit';
+} from '@m7eio/rainbowkit';
 import { chain, configureChains, createClient, WagmiConfig } from 'wagmi';
 import { alchemyProvider } from 'wagmi/providers/alchemy';
 import { publicProvider } from 'wagmi/providers/public';
@@ -14,7 +14,7 @@ import { SessionProvider } from 'next-auth/react';
 import {
   RainbowKitSiweNextAuthProvider,
   GetSiweMessageOptions,
-} from '@rainbow-me/rainbowkit-siwe-next-auth';
+} from '@m7eio/rainbowkit-siwe-next-auth';
 
 const { chains, provider, webSocketProvider } = configureChains(
   [

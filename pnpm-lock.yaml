@@ -85,7 +85,7 @@ importers:
 
   examples/with-create-react-app:
     specifiers:
-      '@rainbow-me/rainbowkit': workspace:*
+      '@m7eio/rainbowkit': workspace:*
       '@testing-library/jest-dom': ^5.16.4
       '@testing-library/react': ^13.2.0
       '@testing-library/user-event': ^13.5.0
@@ -95,7 +95,7 @@ importers:
       util: 0.12.4
       web-vitals: ^2.1.4
     dependencies:
-      '@rainbow-me/rainbowkit': link:../../packages/rainbowkit
+      '@m7eio/rainbowkit': link:../../packages/rainbowkit
       '@testing-library/jest-dom': 5.16.4
       '@testing-library/react': 13.3.0
       '@testing-library/user-event': 13.5.0
@@ -107,12 +107,12 @@ importers:
 
   examples/with-next:
     specifiers:
-      '@rainbow-me/rainbowkit': workspace:*
+      '@m7eio/rainbowkit': workspace:*
       eslint: ^8.15.0
       eslint-config-next: ^12.1.6
       ethers: ^5.0.0
     dependencies:
-      '@rainbow-me/rainbowkit': link:../../packages/rainbowkit
+      '@m7eio/rainbowkit': link:../../packages/rainbowkit
       ethers: 5.6.8
     devDependencies:
       eslint: 8.15.0
@@ -120,12 +120,12 @@ importers:
 
   examples/with-next-custom-button:
     specifiers:
-      '@rainbow-me/rainbowkit': workspace:*
+      '@m7eio/rainbowkit': workspace:*
       eslint: 8.15.0
       eslint-config-next: 12.1.6
       ethers: ^5.6.1
     dependencies:
-      '@rainbow-me/rainbowkit': link:../../packages/rainbowkit
+      '@m7eio/rainbowkit': link:../../packages/rainbowkit
       ethers: 5.6.8
     devDependencies:
       eslint: 8.15.0
@@ -133,13 +133,13 @@ importers:
 
   examples/with-next-mint-nft:
     specifiers:
-      '@rainbow-me/rainbowkit': workspace:*
+      '@m7eio/rainbowkit': workspace:*
       eslint: 8.15.0
       eslint-config-next: 12.1.6
       ethers: ^5.6.1
       framer-motion: ^6.3.3
     dependencies:
-      '@rainbow-me/rainbowkit': link:../../packages/rainbowkit
+      '@m7eio/rainbowkit': link:../../packages/rainbowkit
       ethers: 5.6.8
       framer-motion: 6.3.10
     devDependencies:
@@ -148,14 +148,14 @@ importers:
 
   examples/with-next-siwe-iron-session:
     specifiers:
-      '@rainbow-me/rainbowkit': workspace:*
+      '@m7eio/rainbowkit': workspace:*
       eslint: ^8.15.0
       eslint-config-next: ^12.1.6
       ethers: ^5.0.0
       iron-session: ^6.1.3
       siwe: ^1.1.6
     dependencies:
-      '@rainbow-me/rainbowkit': link:../../packages/rainbowkit
+      '@m7eio/rainbowkit': link:../../packages/rainbowkit
       ethers: 5.6.8
       iron-session: 6.1.3
       siwe: 1.1.6_ethers@5.6.8
@@ -165,15 +165,15 @@ importers:
 
   examples/with-next-siwe-next-auth:
     specifiers:
-      '@rainbow-me/rainbowkit': workspace:*
-      '@rainbow-me/rainbowkit-siwe-next-auth': workspace:*
+      '@m7eio/rainbowkit': workspace:*
+      '@m7eio/rainbowkit-siwe-next-auth': workspace:*
       eslint: ^8.15.0
       eslint-config-next: ^12.1.6
       ethers: ^5.0.0
       siwe: ^1.1.6
     dependencies:
-      '@rainbow-me/rainbowkit': link:../../packages/rainbowkit
-      '@rainbow-me/rainbowkit-siwe-next-auth': link:../../packages/rainbowkit-siwe-next-auth
+      '@m7eio/rainbowkit': link:../../packages/rainbowkit
+      '@m7eio/rainbowkit-siwe-next-auth': link:../../packages/rainbowkit-siwe-next-auth
       ethers: 5.6.8
       siwe: 1.1.6_ethers@5.6.8
     devDependencies:
@@ -183,7 +183,7 @@ importers:
   examples/with-remix:
     specifiers:
       '@ethersproject/providers': ^5.5.1
-      '@rainbow-me/rainbowkit': workspace:*
+      '@m7eio/rainbowkit': workspace:*
       '@remix-run/dev': ^1.5.1
       '@remix-run/eslint-config': ^1.5.1
       '@remix-run/node': ^1.5.1
@@ -193,7 +193,7 @@ importers:
       ethers: ^5.0.0
     dependencies:
       '@ethersproject/providers': 5.6.8
-      '@rainbow-me/rainbowkit': link:../../packages/rainbowkit
+      '@m7eio/rainbowkit': link:../../packages/rainbowkit
       '@remix-run/node': 1.5.1
       '@remix-run/react': 1.5.1
       '@remix-run/serve': 1.5.1
@@ -205,13 +205,13 @@ importers:
 
   examples/with-vite:
     specifiers:
-      '@rainbow-me/rainbowkit': workspace:*
+      '@m7eio/rainbowkit': workspace:*
       '@vitejs/plugin-react': ^1.3.0
       buffer: ^6.0.3
       ethers: ^5.0.0
       vite: ^2.9.9
     dependencies:
-      '@rainbow-me/rainbowkit': link:../../packages/rainbowkit
+      '@m7eio/rainbowkit': link:../../packages/rainbowkit
       buffer: 6.0.3
       ethers: 5.6.8
     devDependencies:
@@ -245,12 +245,12 @@ importers:
 
   packages/create-rainbowkit/generated-test-app:
     specifiers:
-      '@rainbow-me/rainbowkit': workspace:*
+      '@m7eio/rainbowkit': workspace:*
       eslint: ^8.15.0
       eslint-config-next: ^12.1.6
       ethers: ^5.0.0
     dependencies:
-      '@rainbow-me/rainbowkit': link:../../rainbowkit
+      '@m7eio/rainbowkit': link:../../rainbowkit
       ethers: 5.6.8
     devDependencies:
       eslint: 8.15.0
@@ -258,12 +258,12 @@ importers:
 
   packages/create-rainbowkit/templates/next-app:
     specifiers:
-      '@rainbow-me/rainbowkit': workspace:*
+      '@m7eio/rainbowkit': workspace:*
       eslint: ^8.15.0
       eslint-config-next: ^12.1.6
       ethers: ^5.0.0
     dependencies:
-      '@rainbow-me/rainbowkit': link:../../../rainbowkit
+      '@m7eio/rainbowkit': link:../../../rainbowkit
       ethers: 5.6.8
     devDependencies:
       eslint: 8.15.0
@@ -271,8 +271,8 @@ importers:
 
   packages/example:
     specifiers:
-      '@rainbow-me/rainbowkit': workspace:*
-      '@rainbow-me/rainbowkit-siwe-next-auth': workspace:*
+      '@m7eio/rainbowkit': workspace:*
+      '@m7eio/rainbowkit-siwe-next-auth': workspace:*
       ethers: ^5.0.0
       next: ^12.1.6
       next-auth: ^4.10.2
@@ -280,8 +280,8 @@ importers:
       react-dom: ^18.1.0
       siwe: ^1.1.6
     dependencies:
-      '@rainbow-me/rainbowkit': link:../rainbowkit
-      '@rainbow-me/rainbowkit-siwe-next-auth': link:../rainbowkit-siwe-next-auth
+      '@m7eio/rainbowkit': link:../rainbowkit
+      '@m7eio/rainbowkit-siwe-next-auth': link:../rainbowkit-siwe-next-auth
       ethers: 5.6.2
       next: 12.1.6_ef5jwxihqo6n7gxfmzogljlgcm
       next-auth: 4.10.2_ef5jwxihqo6n7gxfmzogljlgcm
@@ -330,10 +330,10 @@ importers:
 
   packages/rainbowkit-siwe-next-auth:
     specifiers:
-      '@rainbow-me/rainbowkit': workspace:*
+      '@m7eio/rainbowkit': workspace:*
       siwe: ^1.1.6
     devDependencies:
-      '@rainbow-me/rainbowkit': link:../rainbowkit
+      '@m7eio/rainbowkit': link:../rainbowkit
       siwe: 1.1.6
 
   site:
@@ -344,7 +344,7 @@ importers:
       '@radix-ui/react-popover': ^0.1.6
       '@radix-ui/react-portal': ^0.1.4
       '@radix-ui/react-radio-group': ^0.1.5
-      '@rainbow-me/rainbowkit': workspace:*
+      '@m7eio/rainbowkit': workspace:*
       '@react-spring/three': ^9.4.4
       '@react-three/fiber': ^8.0.12
       '@vanilla-extract/babel-plugin': 1.1.4
@@ -380,7 +380,7 @@ importers:
       '@radix-ui/react-popover': 0.1.6_ef5jwxihqo6n7gxfmzogljlgcm
       '@radix-ui/react-portal': 0.1.4_ef5jwxihqo6n7gxfmzogljlgcm
       '@radix-ui/react-radio-group': 0.1.5_react@18.1.0
-      '@rainbow-me/rainbowkit': link:../packages/rainbowkit
+      '@m7eio/rainbowkit': link:../packages/rainbowkit
       '@react-spring/three': 9.4.4_wjm6wxdjmepnv426bzjuegmcfu
       '@react-three/fiber': 8.0.12_w6hzpac57u3p7v6aj52gg7rj6e
       '@vanilla-extract/babel-plugin': 1.1.4

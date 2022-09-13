@@ -48,7 +48,7 @@ async function run() {
     const options = program.opts();
 
     const reservedPackageNames = [
-      '@rainbow-me/rainbowkit',
+      '@m7eio/rainbowkit',
       'wagmi',
       'ethers',
       'next',
@@ -163,7 +163,7 @@ async function run() {
 
     if (process.env.INSTALL_WORKSPACE_RAINBOWKIT !== 'true') {
       // Remove RainbowKit workspace dependency so we can install latest
-      delete pkgJson.dependencies['@rainbow-me/rainbowkit'];
+      delete pkgJson.dependencies['@m7eio/rainbowkit'];
     }
 
     await fs.writeFile(
@@ -194,10 +194,7 @@ async function run() {
     if (process.env.INSTALL_WORKSPACE_RAINBOWKIT !== 'true') {
       await execa(
         packageManager,
-        [
-          packageManager === 'yarn' ? 'add' : 'install',
-          '@rainbow-me/rainbowkit',
-        ],
+        [packageManager === 'yarn' ? 'add' : 'install', '@m7eio/rainbowkit'],
         {
           cwd: targetPath,
           stdio: 'inherit',

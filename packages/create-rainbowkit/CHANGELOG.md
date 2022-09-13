@@ -1,4 +1,4 @@
-# @rainbow-me/create-rainbowkit
+# @m7eio/create-rainbowkit
 
 ## 0.1.1
 
@@ -22,7 +22,7 @@
 
 - fd5e8e7: Fix install step in Yarn
 
-  The `install` command for `@rainbow-me/create-rainbowkit` was failing when using `yarn create` because Yarn uses `add` instead of `install`, so we now use the correct command when Yarn is detected.
+  The `install` command for `@m7eio/create-rainbowkit` was failing when using `yarn create` because Yarn uses `add` instead of `install`, so we now use the correct command when Yarn is detected.
 
 ## 0.0.3
 

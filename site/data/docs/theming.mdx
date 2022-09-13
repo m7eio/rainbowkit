@@ -18,7 +18,7 @@ There are 3 built-in theme functions:
 A theme function returns a theme object. You can pass the object to the `RainbowKitProvider`'s `theme` prop.
 
 ```tsx
-import { RainbowKitProvider, darkTheme } from '@rainbow-me/rainbowkit';
+import { RainbowKitProvider, darkTheme } from '@m7eio/rainbowkit';
 
 export const App = () => (
   <RainbowKitProvider theme={darkTheme()} {...etc}>
@@ -30,7 +30,7 @@ export const App = () => (
 If you want, you can pass in `accentColor`, `accentColorForeground`, `borderRadius`, `fontStack` and `overlayBlur` to customize them.
 
 ```tsx
-import { RainbowKitProvider, darkTheme } from '@rainbow-me/rainbowkit';
+import { RainbowKitProvider, darkTheme } from '@m7eio/rainbowkit';
 
 export const App = () => (
   <RainbowKitProvider
@@ -101,7 +101,7 @@ The built-in theme functions also accept an options object, allowing you to sele
 For example, to customize the dark theme with a purple accent color and a `medium` border radius scale:
 
 ```tsx
-import { RainbowKitProvider, darkTheme } from '@rainbow-me/rainbowkit';
+import { RainbowKitProvider, darkTheme } from '@m7eio/rainbowkit';
 
 const App = () => {
   return (
@@ -122,7 +122,7 @@ const App = () => {
 Each theme also provides several accent color presets (`blue`, `green`, `orange`, `pink`, `purple`, `red`) that can be spread into the options object. For example, to use the `pink` accent color preset:
 
 ```tsx
-import { RainbowKitProvider, darkTheme } from '@rainbow-me/rainbowkit';
+import { RainbowKitProvider, darkTheme } from '@m7eio/rainbowkit';
 
 const App = () => {
   return (
@@ -147,7 +147,7 @@ Here are a few different ways you can use the `theme` prop.
 Use the `darkTheme` theme.
 
 ```tsx
-import { RainbowKitProvider, darkTheme } from '@rainbow-me/rainbowkit';
+import { RainbowKitProvider, darkTheme } from '@m7eio/rainbowkit';
 
 export const App = () => (
   <RainbowKitProvider theme={darkTheme()} {...etc}>
@@ -159,10 +159,7 @@ export const App = () => (
 Use the `midnightTheme` theme.
 
 ```tsx
-import {
-  RainbowKitProvider,
-  midnightTheme,
-} from '@rainbow-me/rainbowkit';
+import { RainbowKitProvider, midnightTheme } from '@m7eio/rainbowkit';
 
 export const App = () => (
   <RainbowKitProvider theme={midnightTheme()} {...etc}>
@@ -178,7 +175,7 @@ Here are a few different ways you can use the `accentColor` config.
 Set the accent color to a custom purple value.
 
 ```tsx
-import { RainbowKitProvider, darkTheme } from '@rainbow-me/rainbowkit';
+import { RainbowKitProvider, darkTheme } from '@m7eio/rainbowkit';
 
 const App = () => {
   return (
@@ -198,7 +195,7 @@ const App = () => {
 Set the accent color to the built-in `green` preset.
 
 ```tsx
-import { RainbowKitProvider, darkTheme } from '@rainbow-me/rainbowkit';
+import { RainbowKitProvider, darkTheme } from '@m7eio/rainbowkit';
 
 const App = () => {
   return (
@@ -221,7 +218,7 @@ Here are a few different ways you can use the `borderRadius` config.
 Set the border radius to `medium`.
 
 ```tsx
-import { RainbowKitProvider, darkTheme } from '@rainbow-me/rainbowkit';
+import { RainbowKitProvider, darkTheme } from '@m7eio/rainbowkit';
 
 const App = () => {
   return (
@@ -240,7 +237,7 @@ const App = () => {
 Set the border radius to `none`.
 
 ```tsx
-import { RainbowKitProvider, darkTheme } from '@rainbow-me/rainbowkit';
+import { RainbowKitProvider, darkTheme } from '@m7eio/rainbowkit';
 
 const App = () => {
   return (
@@ -265,7 +262,7 @@ By default, the `fontStack` is set to `rounded`. But here's how you can use the 
 Set the font stack to `system`.
 
 ```tsx
-import { RainbowKitProvider, darkTheme } from '@rainbow-me/rainbowkit';
+import { RainbowKitProvider, darkTheme } from '@m7eio/rainbowkit';
 
 const App = () => {
   return (
@@ -288,7 +285,7 @@ By default, the `overlayBlur` is set to `none`. But here's how you can use the `
 Set the overlay blur to `small`.
 
 ```tsx
-import { RainbowKitProvider, darkTheme } from '@rainbow-me/rainbowkit';
+import { RainbowKitProvider, darkTheme } from '@m7eio/rainbowkit';
 
 const App = () => {
   return (
@@ -314,7 +311,7 @@ Here are a few different ways you can use different themes, with `accentColor`, 
 - Set the font stack to `system`
 
 ```tsx
-import { RainbowKitProvider, lightTheme } from '@rainbow-me/rainbowkit';
+import { RainbowKitProvider, lightTheme } from '@m7eio/rainbowkit';
 
 const App = () => {
   return (
@@ -339,10 +336,7 @@ const App = () => {
 - Set the font stack to `system`
 
 ```tsx
-import {
-  RainbowKitProvider,
-  midnightTheme,
-} from '@rainbow-me/rainbowkit';
+import { RainbowKitProvider, midnightTheme } from '@m7eio/rainbowkit';
 
 const App = () => {
   return (
@@ -369,7 +363,7 @@ import {
   RainbowKitProvider,
   lightTheme,
   darkTheme,
-} from '@rainbow-me/rainbowkit';
+} from '@m7eio/rainbowkit';
 
 const App = () => (
   <RainbowKitProvider

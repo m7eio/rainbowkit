@@ -1,4 +1,4 @@
-# @rainbow-me/rainbowkit
+# @m7eio/rainbowkit
 
 ## 0.5.1
 
@@ -14,7 +14,7 @@
 
 - 737a1d6: Added support for authentication.
 
-  RainbowKit now provides first-class support for [Sign-In with Ethereum](https://login.xyz) and [NextAuth.js](https://next-auth.js.org) via the `@rainbow-me/rainbowkit-siwe-next-auth` package, as well as lower-level APIs for integrating with custom back-ends and message formats.
+  RainbowKit now provides first-class support for [Sign-In with Ethereum](https://login.xyz) and [NextAuth.js](https://next-auth.js.org) via the `@m7eio/rainbowkit-siwe-next-auth` package, as well as lower-level APIs for integrating with custom back-ends and message formats.
 
   For more information on how to integrate this feature into your application, check out the full [RainbowKit authentication guide.](https://www.rainbowkit.com/docs/authentication)
 
@@ -153,7 +153,7 @@
     useConnectModal,
     useAccountModal,
     useChainModal,
-  } from '@rainbow-me/rainbowkit';
+  } from '@m7eio/rainbowkit';
 
   export const YourApp = () => {
     const { openConnectModal } = useConnectModal();
@@ -262,7 +262,7 @@
   If you previously derived RPC URLs from the `chainId` on `createConnector`, you can now remove that logic as `wagmi` now handles RPC URLs internally when used with `configureChains`.
 
   ```diff
-  import { connectorsForWallets, wallet, Chain, Wallet } from '@rainbow-me/rainbowkit';
+  import { connectorsForWallets, wallet, Chain, Wallet } from '@m7eio/rainbowkit';
   import { chain, configureChains } from 'wagmi';
   import { alchemyProvider } from 'wagmi/providers/alchemy';
   import { publicProvider } from 'wagmi/providers/public';
@@ -381,7 +381,7 @@
   import {
     apiProvider,
   -  configureChains
-  } from '@rainbow-me/rainbowkit';
+  } from '@m7eio/rainbowkit';
   +import { configureChains } from 'wagmi';
   ```
 
@@ -392,7 +392,7 @@
   ```diff
   -import {
   -  apiProvider,
-  -} from '@rainbow-me/rainbowkit';
+  -} from '@m7eio/rainbowkit';
   import { configureChains } from 'wagmi';
   +import { alchemyProvider } from 'wagmi/providers/alchemy';
 
@@ -408,7 +408,7 @@
   ```diff
   -import {
   -  apiProvider,
-  -} from '@rainbow-me/rainbowkit';
+  -} from '@m7eio/rainbowkit';
   import { configureChains } from 'wagmi';
   +import { infuraProvider } from 'wagmi/providers/infura';
 
@@ -424,7 +424,7 @@
   ```diff
   -import {
   -  apiProvider,
-  -} from '@rainbow-me/rainbowkit';
+  -} from '@m7eio/rainbowkit';
   import { configureChains } from 'wagmi';
   +import { jsonRpcProvider } from 'wagmi/providers/jsonRpc';
 
@@ -448,7 +448,7 @@
   ```diff
   -import {
   -  apiProvider,
-  -} from '@rainbow-me/rainbowkit';
+  -} from '@m7eio/rainbowkit';
   import { configureChains } from 'wagmi';
   +import { publicProvider } from 'wagmi/providers/public';
 
@@ -468,7 +468,7 @@
   Example usage:
 
   ```tsx
-  import { wallet } from '@rainbow-me/rainbowkit';
+  import { wallet } from '@m7eio/rainbowkit';
 
   const steakwallet = wallet.steak({ chains });
   ```
@@ -508,8 +508,8 @@
   **Migration guide**
 
   ```diff
-  -import { getDefaultWallets, connectorsForWallets } from '@rainbow-me/rainbowkit';
-  +import { getDefaultWallets } from '@rainbow-me/rainbowkit';
+  -import { getDefaultWallets, connectorsForWallets } from '@m7eio/rainbowkit';
+  +import { getDefaultWallets } from '@m7eio/rainbowkit';
 
   -const wallets = getDefaultWallets({
   +const { connectors } = getDefaultWallets({
@@ -522,7 +522,7 @@
   If you were modifying the wallet list returned from `getDefaultWallets`, you’ll need to destructure the `wallets` property from the returned object.
 
   ```diff
-  import { getDefaultWallets, connectorsForWallets } from '@rainbow-me/rainbowkit';
+  import { getDefaultWallets, connectorsForWallets } from '@m7eio/rainbowkit';
 
   -const wallets = getDefaultWallets({
   +const { wallets } = getDefaultWallets({
@@ -549,7 +549,7 @@
   When using a custom accent color:
 
   ```tsx
-  import { RainbowKitProvider, darkTheme } from '@rainbow-me/rainbowkit';
+  import { RainbowKitProvider, darkTheme } from '@m7eio/rainbowkit';
 
   const App = () => {
     return (
@@ -568,7 +568,7 @@
   When using a built-in accent color preset:
 
   ```tsx
-  import { RainbowKitProvider, darkTheme } from '@rainbow-me/rainbowkit';
+  import { RainbowKitProvider, darkTheme } from '@m7eio/rainbowkit';
 
   const App = () => {
     return (
@@ -634,7 +634,7 @@
   If you wish to maintain the existing behavior, a new `mounted` boolean is passed to your render function which allows you to render `null` manually when `mounted` is `false`.
 
   ```diff
-  import { ConnectButton } from '@rainbow-me/rainbowkit';
+  import { ConnectButton } from '@m7eio/rainbowkit';
 
   export default () => (
     <ConnectButton.Custom>
@@ -729,7 +729,7 @@
   First enable the `showRecentTransactions` option on `RainbowKitProvider`.
 
   ```tsx
-  import { RainbowKitProvider } from '@rainbow-me/rainbowkit';
+  import { RainbowKitProvider } from '@m7eio/rainbowkit';
 
   const App = () => {
     return (
@@ -743,7 +743,7 @@
   Transactions can then be registered with RainbowKit using the `useAddRecentTransaction` hook.
 
   ```tsx
-  import { useAddRecentTransaction } from '@rainbow-me/rainbowkit';
+  import { useAddRecentTransaction } from '@m7eio/rainbowkit';
 
   export default () => {
     const addRecentTransaction = useAddRecentTransaction();
@@ -768,7 +768,7 @@
   By default the transaction will be considered completed once a single block has been mined on top of the block in which the transaction was mined, but this can be configured by specifying a custom `confirmations` value.
 
   ```tsx
-  import { useAddRecentTransaction } from '@rainbow-me/rainbowkit';
+  import { useAddRecentTransaction } from '@m7eio/rainbowkit';
 
   export default () => {
     const addRecentTransaction = useAddRecentTransaction();
@@ -818,7 +818,7 @@
     RainbowKitProvider,
     Chain,
     getDefaultWallets,
-  } from '@rainbow-me/rainbowkit';
+  } from '@m7eio/rainbowkit';
   import { createClient, WagmiProvider, chain } from 'wagmi';
   import { providers } from 'ethers';
 
@@ -873,7 +873,7 @@
     configureChains,
     getDefaultWallets,
     RainbowKitProvider,
-  } from '@rainbow-me/rainbowkit';
+  } from '@m7eio/rainbowkit';
   import { createClient, WagmiProvider, chain } from 'wagmi';
   import { providers } from 'ethers';
 
@@ -1025,7 +1025,7 @@
   **Example usage**
 
   ```tsx
-  import { wallet, WalletList } from '@rainbow-me/rainbowkit';
+  import { wallet, WalletList } from '@m7eio/rainbowkit';
 
   const wallets: WalletList = [
     {

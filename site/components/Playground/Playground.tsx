@@ -1,12 +1,12 @@
 /* eslint-disable sort-keys-fix/sort-keys-fix */
-import * as RadioGroup from '@radix-ui/react-radio-group';
 import {
   __private__,
   darkTheme,
   lightTheme,
   midnightTheme,
   RainbowKitProvider,
-} from '@rainbow-me/rainbowkit';
+} from '@m7eio/rainbowkit';
+import * as RadioGroup from '@radix-ui/react-radio-group';
 import clsx from 'clsx';
 import { Box } from 'components/Box/Box';
 import { MeshGradient } from 'components/MeshGradient/MeshGradient';

@@ -1,5 +1,5 @@
 import './global.css';
-import '@rainbow-me/rainbowkit/styles.css';
+import '@m7eio/rainbowkit/styles.css';
 import {
   AvatarComponent,
   Chain,
@@ -11,12 +11,12 @@ import {
   midnightTheme,
   RainbowKitProvider,
   wallet,
-} from '@rainbow-me/rainbowkit';
+} from '@m7eio/rainbowkit';
 
 import {
   GetSiweMessageOptions,
   RainbowKitSiweNextAuthProvider,
-} from '@rainbow-me/rainbowkit-siwe-next-auth';
+} from '@m7eio/rainbowkit-siwe-next-auth';
 import { SessionProvider, signOut } from 'next-auth/react';
 import type { AppProps } from 'next/app';
 import Head from 'next/head';
