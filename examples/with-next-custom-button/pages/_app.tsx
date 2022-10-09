@@ -5,8 +5,12 @@ import {
   RainbowKitProvider,
   getDefaultWallets,
   connectorsForWallets,
-  wallet,
 } from '@m7eio/rainbowkit';
+import {
+  argentWallet,
+  trustWallet,
+  ledgerWallet,
+} from '@m7eio/rainbowkit/wallets';
 import { chain, configureChains, createClient, WagmiConfig } from 'wagmi';
 import { alchemyProvider } from 'wagmi/providers/alchemy';
 import { publicProvider } from 'wagmi/providers/public';
@@ -41,9 +45,9 @@ const connectors = connectorsForWallets([
   {
     groupName: 'Other',
     wallets: [
-      wallet.argent({ chains }),
-      wallet.trust({ chains }),
-      wallet.ledger({ chains }),
+      argentWallet({ chains }),
+      trustWallet({ chains }),
+      ledgerWallet({ chains }),
     ],
   },
 ]);

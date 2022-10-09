@@ -1,5 +1,26 @@
 # @m7eio/rainbowkit-siwe-next-auth
 
+## 0.1.4
+
+### Patch Changes
+
+- 2e6bb8f: Include `v0.7.x` in RainbowKit peer dependency range
+
+## 0.1.3
+
+### Patch Changes
+
+- 62fd332: Include RainbowKit v0.6.x in peer dependency range
+
+## 0.1.2
+
+### Patch Changes
+
+- Updated dependencies [12912b3]
+- Updated dependencies [fcfc13d]
+- Updated dependencies [3f9013f]
+  - @rainbow-me/rainbowkit@0.5.2
+
 ## 0.1.1
 
 ### Patch Changes

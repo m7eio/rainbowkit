@@ -4,19 +4,20 @@ import { isAndroid } from '../../../utils/isMobile';
 import { Wallet } from '../../Wallet';
 import { getWalletConnectConnector } from '../../getWalletConnectConnector';
 
-export interface SteakOptions {
+export interface ArgentWalletOptions {
   chains: Chain[];
 }
 
-export const steak = ({ chains }: SteakOptions): Wallet => ({
-  id: 'steak',
-  name: 'Steakwallet',
-  iconUrl: async () => (await import('./steak.svg')).default,
-  iconBackground: '#000',
+export const argentWallet = ({ chains }: ArgentWalletOptions): Wallet => ({
+  id: 'argent',
+  name: 'Argent',
+  iconUrl: async () => (await import('./argentWallet.svg')).default,
+  iconBackground: '#fff',
   downloadUrls: {
-    android: 'https://play.google.com/store/apps/details?id=fi.steakwallet.app',
-    ios: 'https://apps.apple.com/np/app/steakwallet/id1569375204',
-    qrCode: 'https://steakwallet.fi/download',
+    android:
+      'https://play.google.com/store/apps/details?id=im.argent.contractwalletclient',
+    ios: 'https://apps.apple.com/us/app/argent/id1358741926',
+    qrCode: 'https://argent.link/app',
   },
   createConnector: () => {
     const connector = getWalletConnectConnector({ chains });
@@ -26,33 +27,34 @@ export const steak = ({ chains }: SteakOptions): Wallet => ({
       mobile: {
         getUri: async () => {
           const { uri } = (await connector.getProvider()).connector;
+
           return isAndroid()
             ? uri
-            : `https://links.steakwallet.fi/wc?uri=${encodeURIComponent(uri)}`;
+            : `https://argent.link/app/wc?uri=${encodeURIComponent(uri)}`;
         },
       },
       qrCode: {
         getUri: async () => (await connector.getProvider()).connector.uri,
         instructions: {
-          learnMoreUrl:
-            'https://blog.steakwallet.fi/introducing-the-steakwallet-beta/',
+          learnMoreUrl: 'https://www.argent.xyz/learn/what-is-a-crypto-wallet/',
           steps: [
             {
               description:
-                'Add Steakwallet to your home screen for faster access to your wallet.',
+                'Put Argent on your home screen for faster access to your wallet.',
               step: 'install',
-              title: 'Open the Steakwallet app',
+              title: 'Open the Argent app',
             },
             {
-              description: 'Create a new wallet or import an existing one.',
+              description:
+                'Create a wallet and username, or import an existing wallet.',
               step: 'create',
               title: 'Create or Import a Wallet',
             },
             {
               description:
-                'Tap the QR icon on your homescreen, scan the code and confirm the prompt to connect.',
+                'After you scan, a connection prompt will appear for you to connect your wallet.',
               step: 'scan',
-              title: 'Tap the QR icon and scan',
+              title: 'Tap the Scan QR button',
             },
           ],
         },
