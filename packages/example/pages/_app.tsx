@@ -23,6 +23,8 @@ import {
   trustWallet,
 } from '@m7eio/rainbowkit/wallets';
 
+import { ParticleNetwork } from '@particle-network/auth';
+
 import { SessionProvider, signOut } from 'next-auth/react';
 import type { AppProps } from 'next/app';
 import Head from 'next/head';
@@ -39,6 +41,16 @@ import { publicProvider } from 'wagmi/providers/public';
 import { AppContextProps } from '../lib/AppContextProps';
 
 const RAINBOW_TERMS = 'https://rainbow.me/terms-of-use';
+
+if (typeof window !== 'undefined') {
+  // init particle
+  // TODO: add particle configurations
+  new ParticleNetwork({
+    appId: '',
+    clientKey: '',
+    projectId: '',
+  });
+}
 
 const avalancheChain: Chain = {
   blockExplorers: {

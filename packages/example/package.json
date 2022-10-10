@@ -7,6 +7,8 @@
   "dependencies": {
     "@m7eio/rainbowkit": "workspace:*",
     "@m7eio/rainbowkit-siwe-next-auth": "workspace:*",
+    "@particle-network/auth": "^0.7.12",
+    "@particle-network/provider": "^0.7.15",
     "ethers": "^5.0.0",
     "next": "^12.1.6",
     "next-auth": "^4.10.2",
