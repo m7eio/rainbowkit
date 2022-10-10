@@ -1,6 +1,6 @@
 {
   "name": "@m7eio/rainbowkit",
-  "version": "0.7.1",
+  "version": "0.7.2",
   "description": "The best way to connect a wallet",
   "files": [
     "dist",
@@ -58,7 +58,6 @@
     "@vanilla-extract/css-utils": "0.1.2",
     "@vanilla-extract/private": "^1.0.3",
     "autoprefixer": "^10.4.0",
-    "ethers": "^5.0.0",
     "nock": "^13.2.4",
     "postcss": "^8.4.4",
     "react": "^18.1.0",
@@ -69,6 +68,7 @@
     "@vanilla-extract/dynamic": "2.0.2",
     "@vanilla-extract/sprinkles": "1.5.0",
     "clsx": "1.1.1",
+    "ethers": "^5.0.0",
     "qrcode": "1.5.0",
     "react-remove-scroll": "2.5.4"
   },
