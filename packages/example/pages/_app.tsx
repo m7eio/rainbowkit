@@ -91,6 +91,7 @@ const { chains, provider, webSocketProvider } = configureChains(
 const { wallets } = getDefaultWallets({
   appName: 'RainbowKit demo',
   chains,
+  authTypes: ['google', 'facebook', 'apple', 'email', 'phone'],
 });
 
 const demoAppInfo = {

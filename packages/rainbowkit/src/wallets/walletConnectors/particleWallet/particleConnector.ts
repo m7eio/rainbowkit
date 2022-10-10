@@ -12,11 +12,16 @@ import {
   SwitchChainError,
   UserRejectedRequestError,
 } from 'wagmi';
+import type { AuthType } from '@particle-network/auth';
 
 type ParticleSigner = providers.JsonRpcSigner;
 
-type ParticleOptions = ConstructorParameters<typeof ParticleProvider>[0];
+type ParticleAuth = ConstructorParameters<typeof ParticleProvider>[0];
 
+type ParticleOptions = {
+  auth: ParticleAuth;
+  authType?: AuthType;
+};
 export class ParticleConnector extends Connector<
   ParticleProvider,
   ParticleOptions,
@@ -27,6 +32,10 @@ export class ParticleConnector extends Connector<
   readonly ready = true;
 
   #provider?: ParticleProvider;
+
+  constructor(config: { chains?: Chain[]; options: ParticleOptions }) {
+    super(config);
+  }
 
   async connect({ chainId }: { chainId?: number } = {}): Promise<
     Required<ConnectorData<any>>
@@ -39,8 +48,10 @@ export class ParticleConnector extends Connector<
 
       this.emit('message', { type: 'connecting' });
 
-      if (!this.options.isLogin()) {
-        await this.options.login();
+      if (!this.options.auth.isLogin()) {
+        await this.options.auth.login({
+          preferredAuthType: this.options.authType,
+        });
       }
 
       let id = await this.getChainId();
@@ -97,7 +108,7 @@ export class ParticleConnector extends Connector<
   async getProvider(): Promise<ParticleProvider> {
     if (!this.#provider) {
       const { ParticleProvider } = await import('@particle-network/provider');
-      this.#provider = new ParticleProvider(this.options);
+      this.#provider = new ParticleProvider(this.options.auth);
     }
     return this.#provider;
   }
@@ -113,7 +124,7 @@ export class ParticleConnector extends Connector<
   }
 
   async isAuthorized(): Promise<boolean> {
-    return this.options.isLogin() && this.options.walletExist();
+    return this.options.auth.isLogin() && this.options.auth.walletExist();
   }
 
   async switchChain(chainId: number): Promise<Chain> {

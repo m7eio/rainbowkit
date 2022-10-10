@@ -172,6 +172,7 @@ export function ConnectDetail({
     name,
     qrCode,
     ready,
+    id,
     showWalletConnectModal,
   } = wallet;
   const getDesktopDeepLink = wallet.desktop?.getUri;
@@ -292,7 +293,9 @@ export function ConnectDetail({
                       textAlign="center"
                       weight="medium"
                     >
-                      Confirm connection in the extension
+                      {id.includes('particle')
+                        ? 'Confirm connection in the window'
+                        : 'Confirm connection in the extension'}
                     </Text>
                   </Box>
                   <Box
