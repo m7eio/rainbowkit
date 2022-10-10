@@ -1,6 +1,5 @@
 /* eslint-disable import/order, sort-imports */
-import { providers } from 'ethers';
-import { getAddress, hexValue } from 'ethers/lib/utils';
+import { providers, ethers } from 'ethers';
 import type { ParticleProvider } from '@particle-network/provider';
 import { Chain } from '../../../components/RainbowKitProvider/RainbowKitChainContext';
 import {
@@ -92,7 +91,7 @@ export class ParticleConnector extends Connector<
     const provider = await this.getProvider();
     const accounts = await provider.request({ method: 'eth_accounts' });
     // return checksum address
-    return getAddress(accounts[0]);
+    return ethers.utils.getAddress(accounts[0]);
   }
 
   async getChainId(): Promise<number> {
@@ -126,7 +125,7 @@ export class ParticleConnector extends Connector<
   async switchChain(chainId: number): Promise<Chain> {
     const provider = await this.getProvider();
     if (!provider) throw new ConnectorNotFoundError();
-    const id = hexValue(chainId);
+    const id = ethers.utils.hexValue(chainId);
     try {
       await provider.request({
         method: 'wallet_switchEthereumChain',
@@ -150,7 +149,7 @@ export class ParticleConnector extends Connector<
 
   protected onAccountsChanged = (accounts: string[]) => {
     if (accounts.length === 0) this.emit('disconnect');
-    else this.emit('change', { account: getAddress(accounts[0]) });
+    else this.emit('change', { account: ethers.utils.getAddress(accounts[0]) });
   };
 
   protected onChainChanged = (chainId: number | string) => {
