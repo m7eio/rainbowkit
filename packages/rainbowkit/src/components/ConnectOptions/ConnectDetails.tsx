@@ -169,10 +169,10 @@ export function ConnectDetail({
     downloadUrls,
     iconBackground,
     iconUrl,
+    id,
     name,
     qrCode,
     ready,
-    id,
     showWalletConnectModal,
   } = wallet;
   const getDesktopDeepLink = wallet.desktop?.getUri;

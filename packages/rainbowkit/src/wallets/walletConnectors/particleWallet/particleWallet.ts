@@ -1,4 +1,4 @@
-/* eslint-disable sort-keys-fix/sort-keys-fix */
+/* eslint-disable sort-keys-fix/sort-keys-fix, sort-destructure-keys/sort-destructure-keys */
 import type { AuthType } from '@particle-network/auth';
 import { Chain } from '../../../components/RainbowKitProvider/RainbowKitChainContext';
 import { titleCase } from '../../../utils/titleCase';

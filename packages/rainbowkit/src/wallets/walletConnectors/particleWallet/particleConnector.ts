@@ -33,10 +33,6 @@ export class ParticleConnector extends Connector<
 
   #provider?: ParticleProvider;
 
-  constructor(config: { chains?: Chain[]; options: ParticleOptions }) {
-    super(config);
-  }
-
   async connect({ chainId }: { chainId?: number } = {}): Promise<
     Required<ConnectorData<any>>
   > {

@@ -1,3 +1,5 @@
+/* eslint-disable sort-destructure-keys/sort-destructure-keys, sort-keys-fix/sort-keys-fix */
+import type { AuthType } from '@particle-network/auth';
 import { Chain } from '../components/RainbowKitProvider/RainbowKitChainContext';
 import { WalletList } from './Wallet';
 import { connectorsForWallets } from './connectorsForWallets';
@@ -8,7 +10,6 @@ import { metaMaskWallet } from './walletConnectors/metaMaskWallet/metaMaskWallet
 import { particleWallet } from './walletConnectors/particleWallet/particleWallet';
 import { rainbowWallet } from './walletConnectors/rainbowWallet/rainbowWallet';
 import { walletConnectWallet } from './walletConnectors/walletConnectWallet/walletConnectWallet';
-import type { AuthType } from '@particle-network/auth';
 
 export const getDefaultWallets = ({
   appName,
