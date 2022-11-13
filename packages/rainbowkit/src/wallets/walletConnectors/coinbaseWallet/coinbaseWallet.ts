@@ -53,7 +53,6 @@ export const coinbaseWallet = ({
         ...(ios
           ? {}
           : {
-              mobile: { getUri },
               qrCode: {
                 getUri,
                 instructions: {

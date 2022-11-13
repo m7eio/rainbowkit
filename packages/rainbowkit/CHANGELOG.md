@@ -1,5 +1,42 @@
 # @m7eio/rainbowkit
 
+## 0.7.4
+
+### Patch Changes
+
+- e36da59: Add support for injected connector to Rainbow wallet
+- 0ff4210: Add `wagmi@0.7.x` to peer dependencies
+
+## 0.7.3
+
+### Patch Changes
+
+- 5a65178: Fix Coinbase Wallet mobile deep link
+
+## 0.7.2
+
+### Patch Changes
+
+- 1de8203: Add `data-testid` attributes to support end-to-end testing.
+
+  The following set of `data-testid` attribute values are now provided.
+
+  - `rk-connect-button`
+  - `rk-disconnect-button`
+  - `rk-account-button`
+  - `rk-chain-button`
+  - `rk-wrong-network-button`
+  - `rk-wallet-option-${wallet.id}`
+  - `rk-chain-option-${chain.id}`
+  - `rk-chain-option-disconnect`
+  - `rk-auth-message-button`
+
+  These attributes can be targeted with a selector like this:
+
+  ```css
+  [data-testid="rk-connect-button"]
+  ```
+
 ## 0.7.1
 
 ### Patch Changes
