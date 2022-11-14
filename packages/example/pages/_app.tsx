@@ -218,6 +218,10 @@ function RainbowKitApp({ Component, pageProps }: AppProps) {
 
   const appContextProps: AppContextProps = { authEnabled };
 
+  const externalContext = {
+    profileListRender: [],
+  };
+
   // Note: Non-RainbowKit providers are wrapped around this component
   // at the bottom of the file. This is so that our example app
   // component can use their corresponding Hooks.
@@ -234,6 +238,7 @@ function RainbowKitApp({ Component, pageProps }: AppProps) {
         avatar={customAvatar ? CustomAvatar : undefined}
         chains={chains}
         coolMode={coolModeEnabled}
+        externalContext={externalContext}
         initialChain={selectedInitialChainId}
         modalSize={modalSize}
         showRecentTransactions={showRecentTransactions}

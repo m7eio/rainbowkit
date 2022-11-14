@@ -5,7 +5,6 @@ import { useMainnetEnsName } from '../../hooks/useMainnetEnsName';
 import { Dialog } from '../Dialog/Dialog';
 import { DialogContent } from '../Dialog/DialogContent';
 import { ProfileDetails } from '../ProfileDetails/ProfileDetails';
-import { AppContext } from '../RainbowKitProvider/AppContext';
 
 export interface AccountModalProps {
   open: boolean;
@@ -18,19 +17,6 @@ export function AccountModal({ onClose, open }: AccountModalProps) {
   const ensAvatar = useMainnetEnsAvatar(address);
   const ensName = useMainnetEnsName(address);
   const { disconnect } = useDisconnect();
-  const { onEditProfile, onViewProfile } = React.useContext(AppContext);
-
-  const viewProfileHandler = React.useCallback(() => {
-    if (onViewProfile) {
-      onViewProfile(onClose);
-    }
-  }, [onViewProfile]);
-
-  const editProfileHandler = React.useCallback(() => {
-    if (onEditProfile) {
-      onEditProfile(onClose);
-    }
-  }, [onEditProfile]);
 
   if (!address) {
     return null;
@@ -50,8 +36,6 @@ export function AccountModal({ onClose, open }: AccountModalProps) {
               ensName={ensName}
               onClose={onClose}
               onDisconnect={disconnect}
-              onEditProfile={editProfileHandler}
-              onViewProfile={viewProfileHandler}
             />
           </DialogContent>
         </Dialog>

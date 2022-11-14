@@ -10,8 +10,7 @@ import { formatENS } from '../ConnectButton/formatENS';
 import { CopiedIcon } from '../Icons/Copied';
 import { CopyIcon } from '../Icons/Copy';
 import { DisconnectIcon } from '../Icons/Disconnect';
-import { EditProfile } from '../Icons/EditProfile';
-import { ViewProfile } from '../Icons/ViewProfile';
+import { AppContext } from '../RainbowKitProvider/AppContext';
 import { ShowRecentTransactionsContext } from '../RainbowKitProvider/ShowRecentTransactionsContext';
 import { Text } from '../Text/Text';
 import { TxList } from '../Txs/TxList';
@@ -24,8 +23,6 @@ interface ProfileDetailsProps {
   ensName: ReturnType<typeof useEnsName>['data'];
   onClose: () => void;
   onDisconnect: () => void;
-  onEditProfile: () => void;
-  onViewProfile: () => void;
 }
 
 export function ProfileDetails({
@@ -35,10 +32,9 @@ export function ProfileDetails({
   ensName,
   onClose,
   onDisconnect,
-  onEditProfile,
-  onViewProfile,
 }: ProfileDetailsProps) {
   const showRecentTransactions = useContext(ShowRecentTransactionsContext);
+  const { profileListRender } = React.useContext(AppContext);
   const [copiedAddress, setCopiedAddress] = useState(false);
 
   const copyAddressAction = useCallback(() => {
@@ -157,16 +153,18 @@ export function ProfileDetails({
             margin="2"
             marginTop="16"
           >
-            <ProfileDetailsAction
-              action={onViewProfile}
-              icon={<ViewProfile size={16} />}
-              label="View Profile"
-            />
-            <ProfileDetailsAction
-              action={onEditProfile}
-              icon={<EditProfile size={16} />}
-              label="Edit Profile"
-            />
+            {Array.isArray(profileListRender) &&
+              profileListRender.map((item, idx) => {
+                return (
+                  <ProfileDetailsAction
+                    action={item.action}
+                    icon={item.icon}
+                    key={item.label || idx}
+                    label={item.label}
+                    url={item.url}
+                  />
+                );
+              })}
           </Box>
         </Box>
         {showRecentTransactions && (

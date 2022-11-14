@@ -15,6 +15,11 @@ export const AppContext = createContext<{
   appName?: string;
   learnMoreUrl?: string;
   disclaimer?: DisclaimerComponent;
-  onViewProfile?: (onClose: () => void) => void;
-  onEditProfile?: (onClose: () => void) => void;
+  profileListRender?: {
+    label: string;
+    action?: () => void;
+    icon: JSX.Element;
+    url?: string;
+    testId?: string;
+  }[];
 }>(defaultAppInfo);
