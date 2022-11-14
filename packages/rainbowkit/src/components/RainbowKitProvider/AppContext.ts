@@ -17,7 +17,7 @@ export const AppContext = createContext<{
   disclaimer?: DisclaimerComponent;
   profileListRender?: {
     label: string;
-    action?: () => void;
+    action?: (onClose: () => void) => void;
     icon: JSX.Element;
     url?: string;
     testId?: string;

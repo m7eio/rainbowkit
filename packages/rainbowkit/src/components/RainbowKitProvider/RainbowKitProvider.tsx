@@ -64,6 +64,13 @@ export interface RainbowKitProviderProps {
   avatar?: AvatarComponent;
   modalSize?: ModalSizes;
   externalContext?: {
+    profileListRender?: {
+      label: string;
+      action?: (onClose: () => void) => void;
+      icon: JSX.Element;
+      url?: string;
+      testId?: string;
+    }[];
     [key: string]: any;
   };
 }

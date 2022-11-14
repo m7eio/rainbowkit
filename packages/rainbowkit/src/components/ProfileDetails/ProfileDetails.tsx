@@ -157,7 +157,7 @@ export function ProfileDetails({
               profileListRender.map((item, idx) => {
                 return (
                   <ProfileDetailsAction
-                    action={item.action}
+                    action={() => item?.action?.(onClose)}
                     icon={item.icon}
                     key={item.label || idx}
                     label={item.label}
