@@ -2,18 +2,19 @@ import '../styles/globals.css';
 import '@m7eio/rainbowkit/styles.css';
 import type { AppProps } from 'next/app';
 import { RainbowKitProvider, getDefaultWallets } from '@m7eio/rainbowkit';
-import { chain, configureChains, createClient, WagmiConfig } from 'wagmi';
+import { configureChains, createClient, WagmiConfig } from 'wagmi';
+import { mainnet, polygon, optimism, arbitrum, goerli } from 'wagmi/chains'
 import { alchemyProvider } from 'wagmi/providers/alchemy';
 import { publicProvider } from 'wagmi/providers/public';
 
 const { chains, provider, webSocketProvider } = configureChains(
   [
-    chain.mainnet,
-    chain.polygon,
-    chain.optimism,
-    chain.arbitrum,
+    mainnet,
+    polygon,
+    optimism,
+    arbitrum,
     ...(process.env.NEXT_PUBLIC_ENABLE_TESTNETS === 'true'
-      ? [chain.goerli, chain.kovan, chain.rinkeby, chain.ropsten]
+      ? [goerli]
       : []),
   ],
   [

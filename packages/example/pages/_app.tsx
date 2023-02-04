@@ -2,7 +2,6 @@ import './global.css';
 import '@m7eio/rainbowkit/styles.css';
 import {
   AvatarComponent,
-  Chain,
   connectorsForWallets,
   darkTheme,
   DisclaimerComponent,
@@ -23,67 +22,41 @@ import {
   trustWallet,
 } from '@m7eio/rainbowkit/wallets';
 
-import { ParticleNetwork } from '@particle-network/auth';
-
 import { SessionProvider, signOut } from 'next-auth/react';
 import type { AppProps } from 'next/app';
 import Head from 'next/head';
 import React, { useEffect, useState } from 'react';
 import {
-  chain,
   configureChains,
   createClient,
   useDisconnect,
   WagmiConfig,
 } from 'wagmi';
+import {
+  arbitrum,
+  avalanche,
+  goerli,
+  mainnet,
+  optimism,
+  polygon,
+} from 'wagmi/chains';
 import { alchemyProvider } from 'wagmi/providers/alchemy';
 import { publicProvider } from 'wagmi/providers/public';
 import { AppContextProps } from '../lib/AppContextProps';
 
 const RAINBOW_TERMS = 'https://rainbow.me/terms-of-use';
 
-if (typeof window !== 'undefined') {
-  // init particle
-  // TODO: add particle configurations
-  new ParticleNetwork({
-    appId: '',
-    clientKey: '',
-    projectId: '',
-  });
-}
-
-const avalancheChain: Chain = {
-  blockExplorers: {
-    default: { name: 'SnowTrace', url: 'https://snowtrace.io' },
-    etherscan: { name: 'SnowTrace', url: 'https://snowtrace.io' },
-  },
-  id: 43_114,
-  name: 'Avalanche',
-  nativeCurrency: {
-    decimals: 18,
-    name: 'Avalanche',
-    symbol: 'AVAX',
-  },
-  network: 'avalanche',
-  rpcUrls: {
-    default: 'https://api.avax.network/ext/bc/C/rpc',
-  },
-  testnet: false,
-};
-
 const { chains, provider, webSocketProvider } = configureChains(
   [
-    chain.mainnet,
-    chain.polygon,
-    chain.optimism,
-    chain.arbitrum,
-    avalancheChain,
-    ...(process.env.NEXT_PUBLIC_ENABLE_TESTNETS === 'true'
-      ? [chain.goerli, chain.kovan, chain.rinkeby, chain.ropsten]
-      : []),
+    mainnet,
+    polygon,
+    optimism,
+    arbitrum,
+    avalanche,
+    ...(process.env.NEXT_PUBLIC_ENABLE_TESTNETS === 'true' ? [goerli] : []),
   ],
   [
-    alchemyProvider({ apiKey: '_gg7wSSi0KMBsdKnGVfHDueq6xMB9EkC' }),
+    alchemyProvider({ apiKey: process.env.NEXT_PUBLIC_ALCHEMY_ID || '' }),
     publicProvider(),
   ]
 );
@@ -132,10 +105,10 @@ const connectors = connectorsForWallets([
     groupName: 'Other',
     wallets: [
       argentWallet({ chains }),
-      trustWallet({ chains }),
-      omniWallet({ chains }),
       imTokenWallet({ chains }),
       ledgerWallet({ chains }),
+      omniWallet({ chains }),
+      trustWallet({ chains }),
     ],
   },
 ]);

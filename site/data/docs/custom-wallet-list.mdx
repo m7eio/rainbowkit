@@ -19,13 +19,13 @@ import {
   injectedWallet,
   rainbowWallet,
   walletConnectWallet,
-} from '@m7eio/rainbowkit/wallets';
-import { chain, configureChains } from 'wagmi';
+} from '@rainbow-me/rainbowkit/wallets';
+import { configureChains, mainnet } from 'wagmi';
 import { alchemyProvider } from 'wagmi/providers/alchemy';
 import { publicProvider } from 'wagmi/providers/public';
 
 const { chains } = configureChains(
-  [chain.mainnet],
+  [mainnet],
   [
     alchemyProvider({ apiKey: process.env.ALCHEMY_ID }),
     publicProvider(),

@@ -141,7 +141,11 @@ export class ParticleConnector extends Connector<
       );
     } catch (error) {
       const chain = this.chains.find(x => x.id === chainId);
-      if (!chain) throw new ChainNotConfiguredError();
+      if (!chain)
+        throw new ChainNotConfiguredError({
+          chainId,
+          connectorId: `Chain ${chainId}`,
+        });
 
       throw new SwitchChainError(error);
     }

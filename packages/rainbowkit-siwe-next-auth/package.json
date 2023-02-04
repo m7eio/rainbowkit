@@ -1,6 +1,6 @@
 {
   "name": "@m7eio/rainbowkit-siwe-next-auth",
-  "version": "0.1.7",
+  "version": "0.1.8",
   "description": "RainbowKit authentication adapter for Sign-In with Ethereum and NextAuth.js",
   "files": [
     "dist"
@@ -29,7 +29,7 @@
   "author": "Rainbow",
   "license": "MIT",
   "peerDependencies": {
-    "@m7eio/rainbowkit": "^0.7.3",
+    "@m7eio/rainbowkit": "workspace:*",
     "next-auth": "^4.10.2",
     "react": ">=17",
     "siwe": "^1.1.6"
